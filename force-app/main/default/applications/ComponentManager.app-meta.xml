@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#40D440</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>An App to manage component projects for Rolling Stocks:
+- component status tracking: delivery, acceptance, warranty, open cases, etc.
+- calendar to remind about important events
+- commissioning tools management
+and more</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>ComponentManager</label>
+    <navType>Standard</navType>
+    <tabs>Propulsion__c</tabs>
+    <tabs>Truck__c</tabs>
+    <tabs>Commissioning_Equipment__c</tabs>
+    <tabs>standard-Event</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>ComponentManager_UtilityBar</utilityBar>
+</CustomApplication>
