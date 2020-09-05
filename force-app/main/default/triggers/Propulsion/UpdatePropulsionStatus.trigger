@@ -4,7 +4,7 @@ trigger UpdatePropulsionStatus on Propulsion_part__c (after update) {
         System.debug(obj.id);
         System.debug(obj.Status__c);
         System.debug(obj.Propulsion__c);
-        System.debug(obj.ComponentName__c);
-    propSetToUpdate.updateSetStatus(obj.id, obj.Propulsion__c, obj.Status__c, obj.ComponentName__c);
+     //   System.debug(obj.ComponentName__c);
+    propSetToUpdate.updateSetStatus(obj.id, obj.Propulsion__c, obj.Status__c);
     }
 }

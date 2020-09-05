@@ -73,6 +73,14 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>Status__c</fields>
+        <fields>Supplier__c</fields>
+        <fields>Material_Number__c</fields>
+        <relatedList>Propulsion_Part__c.Propulsion__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>

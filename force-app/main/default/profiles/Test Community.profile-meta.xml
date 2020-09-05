@@ -14,7 +14,39 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CreateObjectData</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreatePropulsionSetForProject</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateTruckSetForProject</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ICreateObjectForProject</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ObjectCreationFactory</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Project</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProjectMap</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Recursion</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Validation</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -104,6 +136,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Propulsion__c.ComponentName__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Propulsion__c.End_of_Warranty__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -124,52 +161,52 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Truck_Parts__c.Acceptance_Date__c</field>
+        <field>Truck_Part__c.Acceptance_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Truck_Parts__c.Arrival_Date__c</field>
+        <field>Truck_Part__c.Arrival_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Truck_Parts__c.End_of_Warranty__c</field>
+        <field>Truck_Part__c.End_of_Warranty__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Truck_Parts__c.Material_Number__c</field>
+        <field>Truck_Part__c.Material_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Truck_Parts__c.Sent_Date__c</field>
+        <field>Truck_Part__c.Sent_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Truck_Parts__c.Serial_Number__c</field>
+        <field>Truck_Part__c.Serial_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Truck_Parts__c.Status__c</field>
+        <field>Truck_Part__c.Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Truck_Parts__c.Supplier_Part_Number__c</field>
+        <field>Truck_Part__c.Supplier_Part_Number__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Truck_Parts__c.Supplier__c</field>
+        <field>Truck_Part__c.Supplier__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Truck_Parts__c.Unit_of_measurement__c</field>
+        <field>Truck_Part__c.Unit_of_measurement__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -180,6 +217,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Truck__c.Arrival_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Truck__c.ComponentName__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -212,7 +254,7 @@
         <layout>Propulsion__c-Propulsion Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Truck_Parts__c-Truck Part Layout</layout>
+        <layout>Truck_Part__c-Truck Part Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Truck__c-Truck Layout</layout>
