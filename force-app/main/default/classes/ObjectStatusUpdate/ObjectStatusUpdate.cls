@@ -1,3 +1,12 @@
+/******************************************************************************
+* Author: Vladimir Bessonov
+* Date: Aug 30, 2020
+* Descpription: Class to update the status of Propulsion or Truck Component 
+
+*/
+
+// TODO: add method to update the date of status.
+
 public class ObjectStatusUpdate {
 
     public enum Status {NOT_SENT , SENT, ARRIVED, ACCEPTED, AFTERWARRANTY}
