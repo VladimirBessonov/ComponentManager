@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>ComponentManager</application>
@@ -34,6 +34,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ObjectStatusUpdate</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Project</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -43,6 +47,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Recursion</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UpdateDateOnStatusChange</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -265,6 +273,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Propulsion__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>The_Office</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
