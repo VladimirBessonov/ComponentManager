@@ -4,7 +4,7 @@
 * Descpription: Test Class for CommissioningTool
 
 */
-@isTest
+@isTest(SeeAllData=true)
 public class CommissioningToolTest {
   @isTest
   static void updateToolStatus() {
@@ -17,11 +17,12 @@ public class CommissioningToolTest {
       Calibration_Valid__c = TodayDate
     );
     insert Tool;
-    CommissioningTool.updateCommissioningToolStatus(Tool.ID);
     Commissioning_Equipment__c NewTool = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
+      WHERE ID = :Tool.ID
     ];
+    CommissioningTool.updateCommissioningToolStatus(NewTool.ID);
     System.debug(NewTool);
     String Expected = '< 3 Months to expire';
     String Actual = (String) NewTool.Status__c;
@@ -40,11 +41,12 @@ public class CommissioningToolTest {
       Calibration_Valid__c = TodayDate
     );
     insert Tool;
-    CommissioningTool.updateCommissioningToolStatus(Tool.ID);
     Commissioning_Equipment__c NewTool = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
+      WHERE ID = :Tool.ID
     ];
+    CommissioningTool.updateCommissioningToolStatus(NewTool.ID);
     System.debug(NewTool);
     String Expected = 'CALIBRATED';
     String Actual = (String) NewTool.Status__c;
@@ -63,11 +65,12 @@ public class CommissioningToolTest {
       Calibration_Valid__c = TodayDate
     );
     insert Tool;
-    CommissioningTool.updateCommissioningToolStatus(Tool.ID);
     Commissioning_Equipment__c NewTool = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
+      WHERE ID = :Tool.ID
     ];
+    CommissioningTool.updateCommissioningToolStatus(NewTool.ID);
     System.debug(NewTool);
     String Expected = 'NOT CALIBRATED';
     String Actual = (String) NewTool.Status__c;
@@ -78,6 +81,8 @@ public class CommissioningToolTest {
   @isTest
   static void updateToolsStatus() {
     Date TodayDate = Date.today();
+    // List<Commissioning_Equipment__c> Tools = [SELECT ID FROM Commissioning_Equipment__c];
+    // delete Tools;
     Commissioning_Equipment__c Tool = new Commissioning_Equipment__c(
       Name = 'TEST',
       Type__c = 'TEST',
@@ -96,18 +101,39 @@ public class CommissioningToolTest {
     insert Tool;
     insert Tool1;
     CommissioningTool.updateCommissioningToolStatus();
-    List<Commissioning_Equipment__c> NewTools = [
-      SELECT Id, Status__c
-      FROM Commissioning_Equipment__c
-    ];
-    System.debug(NewTools);
+
+    // List<Commissioning_Equipment__c> NewTools = [
+    //   SELECT Id, Status__c
+    //   FROM Commissioning_Equipment__c
+    // ];
+
+    // System.debug('List of Tools available: ' + NewTools);
+
     Boolean Passed = true;
     String Expected = '< 3 Months to expire';
-    for (Commissioning_Equipment__c eq : NewTools) {
-      String Actual = (String) eq.Status__c;
-      if (Expected != Actual) {
-        Passed = false;
-      }
+    // for (Commissioning_Equipment__c eq : NewTools) {
+    //   String Actual = (String) eq.Status__c;
+    //   if (Expected != Actual) {
+    //     Passed = false;
+    //   }
+    // }
+
+    Commissioning_Equipment__c Toolupdated = [
+      SELECT Id, Status__c
+      FROM Commissioning_Equipment__c
+      WHERE ID = :Tool.ID
+    ];
+    Commissioning_Equipment__c Toolupdated1 = [
+      SELECT Id, Status__c
+      FROM Commissioning_Equipment__c
+      WHERE ID = :Tool1.ID
+    ];
+
+    if ((String) Toolupdated.Status__c != Expected) {
+      Passed = false;
+    }
+    if ((String) Toolupdated1.Status__c != Expected) {
+      Passed = false;
     }
     System.assertEquals(Passed, true);
   }
@@ -133,18 +159,25 @@ public class CommissioningToolTest {
     insert Tool;
     insert Tool1;
     CommissioningTool.updateCommissioningToolStatus();
-    List<Commissioning_Equipment__c> NewTools = [
-      SELECT Id, Status__c
-      FROM Commissioning_Equipment__c
-    ];
-    System.debug(NewTools);
     Boolean Passed = true;
     String Expected = 'CALIBRATED';
-    for (Commissioning_Equipment__c eq : NewTools) {
-      String Actual = (String) eq.Status__c;
-      if (Expected != Actual) {
-        Passed = false;
-      }
+
+    Commissioning_Equipment__c Toolupdated = [
+      SELECT Id, Status__c
+      FROM Commissioning_Equipment__c
+      WHERE ID = :Tool.ID
+    ];
+    Commissioning_Equipment__c Toolupdated1 = [
+      SELECT Id, Status__c
+      FROM Commissioning_Equipment__c
+      WHERE ID = :Tool1.ID
+    ];
+
+    if ((String) Toolupdated.Status__c != Expected) {
+      Passed = false;
+    }
+    if ((String) Toolupdated1.Status__c != Expected) {
+      Passed = false;
     }
     System.assertEquals(Passed, true);
   }
@@ -170,18 +203,25 @@ public class CommissioningToolTest {
     insert Tool;
     insert Tool1;
     CommissioningTool.updateCommissioningToolStatus();
-    List<Commissioning_Equipment__c> NewTools = [
-      SELECT Id, Status__c
-      FROM Commissioning_Equipment__c
-    ];
-    System.debug(NewTools);
     Boolean Passed = true;
     String Expected = 'NOT CALIBRATED';
-    for (Commissioning_Equipment__c eq : NewTools) {
-      String Actual = (String) eq.Status__c;
-      if (Expected != Actual) {
-        Passed = false;
-      }
+
+    Commissioning_Equipment__c Toolupdated = [
+      SELECT Id, Status__c
+      FROM Commissioning_Equipment__c
+      WHERE ID = :Tool.ID
+    ];
+    Commissioning_Equipment__c Toolupdated1 = [
+      SELECT Id, Status__c
+      FROM Commissioning_Equipment__c
+      WHERE ID = :Tool1.ID
+    ];
+
+    if ((String) Toolupdated.Status__c != Expected) {
+      Passed = false;
+    }
+    if ((String) Toolupdated1.Status__c != Expected) {
+      Passed = false;
     }
     System.assertEquals(Passed, true);
   }
