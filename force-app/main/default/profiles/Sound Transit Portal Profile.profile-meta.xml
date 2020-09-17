@@ -106,7 +106,7 @@
         <field>Propulsion__c.Vehicle_Inventory__c</field>
         <readable>false</readable>
     </fieldPermissions>
-    <fieldPermissions>
+    <!-- <fieldPermissions>
         <editable>false</editable>
         <field>Truck_Parts__c.Acceptance_Date__c</field>
         <readable>false</readable>
@@ -120,8 +120,8 @@
         <editable>false</editable>
         <field>Truck_Parts__c.End_of_Warranty__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
+    </fieldPermissions> -->
+    <!-- <fieldPermissions>
         <editable>false</editable>
         <field>Truck_Parts__c.Material_Number__c</field>
         <readable>false</readable>
@@ -155,7 +155,7 @@
         <editable>false</editable>
         <field>Truck_Parts__c.Unit_of_measurement__c</field>
         <readable>false</readable>
-    </fieldPermissions>
+    </fieldPermissions> -->
     <fieldPermissions>
         <editable>false</editable>
         <field>Truck__c.Acceptance_Date__c</field>
@@ -192,9 +192,9 @@
     <layoutAssignments>
         <layout>Propulsion__c-Propulsion Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
+    <!-- <layoutAssignments>
         <layout>Truck_Parts__c-Truck Part Layout</layout>
-    </layoutAssignments>
+    </layoutAssignments> -->
     <layoutAssignments>
         <layout>Truck__c-Truck Layout</layout>
     </layoutAssignments>

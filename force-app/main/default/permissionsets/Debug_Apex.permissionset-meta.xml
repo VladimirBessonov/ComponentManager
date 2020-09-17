@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fieldPermissions>
+    <!-- <fieldPermissions>
         <editable>false</editable>
         <field>Truck_Parts__c.Acceptance_Date__c</field>
         <readable>false</readable>
@@ -44,12 +44,12 @@
         <editable>false</editable>
         <field>Truck_Parts__c.Supplier__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
+    </fieldPermissions> -->
+    <!-- <fieldPermissions>
         <editable>false</editable>
         <field>Truck_Parts__c.Unit_of_measurement__c</field>
         <readable>false</readable>
-    </fieldPermissions>
+    </fieldPermissions> -->
     <hasActivationRequired>false</hasActivationRequired>
     <label>Debug Apex</label>
     <objectPermissions>
@@ -2131,7 +2131,7 @@
         <object>Trend__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <objectPermissions>
+    <!-- <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -2139,7 +2139,7 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>Truck_Parts__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
+    </objectPermissions> -->
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
