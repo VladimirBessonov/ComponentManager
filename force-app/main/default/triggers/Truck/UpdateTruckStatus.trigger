@@ -1,7 +1,8 @@
 /******************************************************************************
 * Author: Vladimir Bessonov
 * Date: Aug 30, 2020
-* Descpription: Trigger to update component status (Path ) when part status is updated
+* Descpription: Trigger to update component status (Path ) when part status is updated 
+and Part Dates
 
 */
 trigger UpdateTruckStatus on Truck_Part__c(after update) {
@@ -12,6 +13,18 @@ trigger UpdateTruckStatus on Truck_Part__c(after update) {
     System.debug('Master Component ' + obj.Truck__c);
     //  System.debug(obj.ComponentName__c);
 
-    SetToUpdate.updateComponentStatus(obj.id, obj.Status__c, obj.Truck__c);
+    UpdateDateOnStatusChange.updateDate(obj.id, obj.Status__c);
+    
   }
+  Recursion.quoteRecursion = false;
+  for (Truck_part__c obj : Trigger.new) {
+    System.debug('Part ID' + obj.id);
+    System.debug('Status of part ' + obj.Status__c);
+    System.debug('Master Component ' + obj.Truck__c);
+    //  System.debug(obj.ComponentName__c);
+
+    SetToUpdate.updateComponentStatus(obj.id, obj.Status__c, obj.Truck__c);
+    
+  }
+
 }

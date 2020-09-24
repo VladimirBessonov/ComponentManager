@@ -18,8 +18,11 @@ public with sharing class UpdateDateOnStatusChange {
       NewStatus
     );
     System.debug(Recursion.quoteRecursion);
-    if (Recursion.quoteRecursion)
+    if (Recursion.quoteRecursion) {
+      
       return;
+    }
+      
     Recursion.quoteRecursion = true;
 
     Schema.SObjectType PartType = PartID.getSObjectType();
