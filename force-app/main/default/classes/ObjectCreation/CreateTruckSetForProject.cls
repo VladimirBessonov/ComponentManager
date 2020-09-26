@@ -9,7 +9,6 @@ public without sharing class CreateTruckSetForProject implements ICreateObjectFo
 
 
     public string createObject(String ProjectName, String ObjectName, ID ObjectID, CreateObjectData ObjData) {
-                    System.debug('CreateTruckSetForProject: ProjectName, ObjectName, ID, ObjData' +  ProjectName + ' ' + ObjectName + ' ' + ObjectID + '  ' +ObjData);
                     List<Truck_Part__c> PartList = New List<Truck_Part__c>();
                     List<String> PartNames = ObjData.PartNameList;
                     List<String> PartMaterialNumber = ObjData.PartMaterialNumberList;

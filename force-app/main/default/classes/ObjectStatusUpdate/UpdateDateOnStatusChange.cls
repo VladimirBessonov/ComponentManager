@@ -42,7 +42,7 @@ public with sharing class UpdateDateOnStatusChange {
       '\'' +
       PartID +
       '\'';
-    system.debug('***********************Build Query == ' + qryStringPart);
+    // system.debug('***********************Build Query == ' + qryStringPart);
     // SObject resultObject = Database.query(qryString);
     Part = Database.query(qryStringPart); // shell return 1 record only
     system.debug('Part :' + Part);
@@ -78,5 +78,6 @@ public with sharing class UpdateDateOnStatusChange {
       Part
     );
     update Part;
+
   }
 }
