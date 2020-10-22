@@ -20,7 +20,7 @@ public class CommissioningToolTest {
     Commissioning_Equipment__c NewTool = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool.ID
+      WHERE ID = :Tool.ID FOR UPDATE
     ];
     CommissioningTool.updateCommissioningToolStatus(NewTool.ID);
     System.debug(NewTool);
@@ -44,7 +44,7 @@ public class CommissioningToolTest {
     Commissioning_Equipment__c NewTool = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool.ID
+      WHERE ID = :Tool.ID FOR UPDATE
     ];
     CommissioningTool.updateCommissioningToolStatus(NewTool.ID);
     System.debug(NewTool);
@@ -68,7 +68,7 @@ public class CommissioningToolTest {
     Commissioning_Equipment__c NewTool = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool.ID
+      WHERE ID = :Tool.ID FOR UPDATE
     ];
     CommissioningTool.updateCommissioningToolStatus(NewTool.ID);
     System.debug(NewTool);
@@ -102,31 +102,18 @@ public class CommissioningToolTest {
     insert Tool1;
     CommissioningTool.updateCommissioningToolStatus();
 
-    // List<Commissioning_Equipment__c> NewTools = [
-    //   SELECT Id, Status__c
-    //   FROM Commissioning_Equipment__c
-    // ];
-
-    // System.debug('List of Tools available: ' + NewTools);
-
     Boolean Passed = true;
     String Expected = '< 3 Months to expire';
-    // for (Commissioning_Equipment__c eq : NewTools) {
-    //   String Actual = (String) eq.Status__c;
-    //   if (Expected != Actual) {
-    //     Passed = false;
-    //   }
-    // }
 
     Commissioning_Equipment__c Toolupdated = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool.ID
+      WHERE ID = :Tool.ID FOR UPDATE
     ];
     Commissioning_Equipment__c Toolupdated1 = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool1.ID
+      WHERE ID = :Tool1.ID FOR UPDATE
     ];
 
     if ((String) Toolupdated.Status__c != Expected) {
@@ -165,12 +152,12 @@ public class CommissioningToolTest {
     Commissioning_Equipment__c Toolupdated = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool.ID
+      WHERE ID = :Tool.ID FOR UPDATE
     ];
     Commissioning_Equipment__c Toolupdated1 = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool1.ID
+      WHERE ID = :Tool1.ID FOR UPDATE
     ];
 
     if ((String) Toolupdated.Status__c != Expected) {
@@ -209,12 +196,12 @@ public class CommissioningToolTest {
     Commissioning_Equipment__c Toolupdated = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool.ID
+      WHERE ID = :Tool.ID FOR UPDATE
     ];
     Commissioning_Equipment__c Toolupdated1 = [
       SELECT Id, Status__c
       FROM Commissioning_Equipment__c
-      WHERE ID = :Tool1.ID
+      WHERE ID = :Tool1.ID FOR UPDATE
     ];
 
     if ((String) Toolupdated.Status__c != Expected) {

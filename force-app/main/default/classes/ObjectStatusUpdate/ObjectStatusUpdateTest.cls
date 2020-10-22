@@ -22,7 +22,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Truck_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Truck_Part__c
-      WHERE Truck__c = :Comp.id
+      WHERE Truck__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -36,7 +36,7 @@ public with sharing class ObjectStatusUpdateTest {
     Truck__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Truck__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated); // ?
@@ -57,7 +57,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Truck_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Truck_Part__c
-      WHERE Truck__c = :Comp.id
+      WHERE Truck__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -71,7 +71,7 @@ public with sharing class ObjectStatusUpdateTest {
     Truck__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Truck__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated); // ?
@@ -92,7 +92,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Truck_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Truck_Part__c
-      WHERE Truck__c = :Comp.id
+      WHERE Truck__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -106,7 +106,7 @@ public with sharing class ObjectStatusUpdateTest {
     Truck__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Truck__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + CompUpdated);
     System.assertEquals(ExpectedStatus, CompUpdated.Status__c);
@@ -126,7 +126,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Truck_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Truck_Part__c
-      WHERE Truck__c = :Comp.id
+      WHERE Truck__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -140,7 +140,7 @@ public with sharing class ObjectStatusUpdateTest {
     Truck__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Truck__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated);
@@ -161,7 +161,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Propulsion_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Propulsion_Part__c
-      WHERE Propulsion__c = :Comp.id
+      WHERE Propulsion__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -176,7 +176,7 @@ public with sharing class ObjectStatusUpdateTest {
     Propulsion__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Propulsion__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated); // ?
@@ -197,7 +197,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Propulsion_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Propulsion_Part__c
-      WHERE Propulsion__c = :Comp.id
+      WHERE Propulsion__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -212,7 +212,7 @@ public with sharing class ObjectStatusUpdateTest {
     Propulsion__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Propulsion__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated);
@@ -233,7 +233,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Propulsion_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Propulsion_Part__c
-      WHERE Propulsion__c = :Comp.id
+      WHERE Propulsion__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -247,7 +247,7 @@ public with sharing class ObjectStatusUpdateTest {
     Propulsion__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Propulsion__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated);
@@ -268,7 +268,7 @@ public with sharing class ObjectStatusUpdateTest {
     List<Propulsion_Part__c> Parts = [
       SELECT ID, Status__c, Name
       FROM Propulsion_Part__c
-      WHERE Propulsion__c = :Comp.id
+      WHERE Propulsion__c = :Comp.id FOR UPDATE
     ];
     System.debug('Comp: ' + Comp);
     System.debug('Parts ' + Parts);
@@ -282,7 +282,7 @@ public with sharing class ObjectStatusUpdateTest {
     Propulsion__c CompUpdated = [
       SELECT ID, Status__c, Name
       FROM Propulsion__c
-      WHERE ID = :Comp.id
+      WHERE ID = :Comp.id FOR UPDATE
     ];
     System.debug(CompUpdated.Status__c);
     System.debug('Comp: ' + CompUpdated); // ?

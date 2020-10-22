@@ -17,9 +17,9 @@ static void TruckUpdateDateSent() {
         Project__c = 'a3E030000008cFzEAI'
       );
     insert Truck;
-    Truck__c TruckCreated = [Select ID FROM Truck__c WHERE ID =: Truck.id];
+    Truck__c TruckCreated = [Select ID FROM Truck__c WHERE ID =: Truck.id FOR UPDATE];
     Truck_Part__c TruckPart = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-    FROM Truck_Part__c WHERE Truck__c =: TruckCreated.ID LIMIT  1];
+    FROM Truck_Part__c WHERE Truck__c =: TruckCreated.ID LIMIT  1 FOR UPDATE];
     
     String Status = 'SENT';
     TruckPart.Status__c = Status;
@@ -27,7 +27,7 @@ static void TruckUpdateDateSent() {
     update TruckPart;
 
     Truck_Part__c TruckPartUpdared = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-    FROM Truck_Part__c WHERE ID =: TruckPart.ID];
+    FROM Truck_Part__c WHERE ID =: TruckPart.ID FOR UPDATE];
 
     System.debug(TruckPartUpdared);
     
@@ -49,9 +49,9 @@ static void TruckUpdateDateArrived() {
         Project__c = 'a3E030000008cFzEAI'
       );
     insert Truck;
-    Truck__c TruckCreated = [Select ID FROM Truck__c WHERE ID =: Truck.id];
+    Truck__c TruckCreated = [Select ID FROM Truck__c WHERE ID =: Truck.id FOR UPDATE];
     Truck_Part__c TruckPart = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-    FROM Truck_Part__c WHERE Truck__c =: TruckCreated.ID LIMIT  1];
+    FROM Truck_Part__c WHERE Truck__c =: TruckCreated.ID LIMIT  1 FOR UPDATE];
     
     String Status = 'ARRIVED';
     TruckPart.Status__c = Status;
@@ -59,7 +59,7 @@ static void TruckUpdateDateArrived() {
     update TruckPart;
 
     Truck_Part__c TruckPartUpdared = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-    FROM Truck_Part__c WHERE ID =: TruckPart.ID];
+    FROM Truck_Part__c WHERE ID =: TruckPart.ID FOR UPDATE];
 
     System.debug(TruckPartUpdared);
     
@@ -82,7 +82,7 @@ static void TruckUpdateDateArrived() {
         insert Truck;
         Truck__c TruckCreated = [Select ID FROM Truck__c WHERE ID =: Truck.id];
         Truck_Part__c TruckPart = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-        FROM Truck_Part__c WHERE Truck__c =: TruckCreated.ID LIMIT  1];
+        FROM Truck_Part__c WHERE Truck__c =: TruckCreated.ID LIMIT  1 FOR UPDATE];
         
         String Status = 'ACCEPTED/WARRANTY';
         TruckPart.Status__c = Status;
@@ -90,7 +90,7 @@ static void TruckUpdateDateArrived() {
         update TruckPart;
     
         Truck_Part__c TruckPartUpdared = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-        FROM Truck_Part__c WHERE ID =: TruckPart.ID];
+        FROM Truck_Part__c WHERE ID =: TruckPart.ID FOR UPDATE];
     
         System.debug(TruckPartUpdared);
         System.debug(TruckPartUpdared.Acceptance_Date__c);
@@ -114,9 +114,9 @@ static void TruckUpdateDateArrived() {
                 Project__c = 'a3E030000008cFzEAI'
               );
             insert Prop;
-            Propulsion__c PropCreated = [Select ID FROM Propulsion__c WHERE ID =: Prop.id];
+            Propulsion__c PropCreated = [Select ID FROM Propulsion__c WHERE ID =: Prop.id FOR UPDATE];
             Propulsion_Part__c PropPart = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-            FROM Propulsion_Part__c WHERE Propulsion__c =: PropCreated.ID LIMIT  1];
+            FROM Propulsion_Part__c WHERE Propulsion__c =: PropCreated.ID LIMIT  1 FOR UPDATE];
             
             String Status = 'SENT';
             PropPart.Status__c = Status;
@@ -124,7 +124,7 @@ static void TruckUpdateDateArrived() {
             update PropPart;
         
             Propulsion_Part__c PropPartUpdated = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-            FROM Propulsion_Part__c WHERE ID =: PropPart.ID];
+            FROM Propulsion_Part__c WHERE ID =: PropPart.ID FOR UPDATE];
         
             System.debug(PropPartUpdated);
             
@@ -146,9 +146,9 @@ static void TruckUpdateDateArrived() {
                 Project__c = 'a3E030000008cFzEAI'
               );
             insert Prop;
-            Propulsion__c PropCreated = [Select ID FROM Propulsion__c WHERE ID =: Prop.id];
+            Propulsion__c PropCreated = [Select ID FROM Propulsion__c WHERE ID =: Prop.id FOR UPDATE];
             Propulsion_Part__c PropPart = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-            FROM Propulsion_Part__c WHERE Propulsion__c =: PropCreated.ID LIMIT  1];
+            FROM Propulsion_Part__c WHERE Propulsion__c =: PropCreated.ID LIMIT  1 FOR UPDATE];
             
             String Status = 'ARRIVED';
             PropPart.Status__c = Status;
@@ -156,7 +156,7 @@ static void TruckUpdateDateArrived() {
             update PropPart;
         
             Propulsion_Part__c PropPartUpdated = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-            FROM Propulsion_Part__c WHERE ID =: PropPart.ID];
+            FROM Propulsion_Part__c WHERE ID =: PropPart.ID FOR UPDATE];
         
             System.debug(PropPartUpdated);
             
@@ -178,9 +178,9 @@ static void TruckUpdateDateArrived() {
                 Project__c = 'a3E030000008cFzEAI'
               );
             insert Prop;
-            Propulsion__c PropCreated = [Select ID FROM Propulsion__c WHERE ID =: Prop.id];
+            Propulsion__c PropCreated = [Select ID FROM Propulsion__c WHERE ID =: Prop.id FOR UPDATE];
             Propulsion_Part__c PropPart = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-            FROM Propulsion_Part__c WHERE Propulsion__c =: PropCreated.ID LIMIT  1];
+            FROM Propulsion_Part__c WHERE Propulsion__c =: PropCreated.ID LIMIT  1 FOR UPDATE];
             
             String Status = 'ACCEPTED/WARRANTY';
             PropPart.Status__c = Status;
@@ -188,7 +188,7 @@ static void TruckUpdateDateArrived() {
             update PropPart;
         
             Propulsion_Part__c PropPartUpdated = [Select Name, ID, Status__c, Sent_Date__c, Arrival_Date__c, Acceptance_Date__c, End_of_Warranty__c 
-            FROM Propulsion_Part__c WHERE ID =: PropPart.ID];
+            FROM Propulsion_Part__c WHERE ID =: PropPart.ID FOR UPDATE];
         
             System.debug(PropPartUpdated);
             
